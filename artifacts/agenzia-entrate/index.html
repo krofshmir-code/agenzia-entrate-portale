@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Agenzia delle Entrate - Portale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Auto-recovery: if React hasn't mounted after 4 seconds, reload once
+      window.__recoveryAttempted = window.__recoveryAttempted || false;
+      setTimeout(function() {
+        var root = document.getElementById('root');
+        if (root && root.children.length === 0 && !window.__recoveryAttempted) {
+          window.__recoveryAttempted = true;
+          window.location.reload();
+        }
+      }, 4000);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
