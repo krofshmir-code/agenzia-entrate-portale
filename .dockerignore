@@ -1,0 +1,16 @@
+node_modules
+.git
+.gitignore
+dist
+.env
+.env.local
+.cache
+.local
+.replit
+replit.nix
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+attached_assets

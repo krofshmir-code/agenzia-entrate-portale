@@ -1,0 +1,268 @@
+import { db } from "@workspace/db";
+import { documentsTable, templatesTable } from "@workspace/db/schema";
+
+async function seed() {
+  console.log("Seeding documents...");
+
+  await db.delete(documentsTable);
+  await db.delete(templatesTable);
+
+  await db.insert(documentsTable).values([
+    {
+      title: "Guida alla registrazione al SID",
+      category: "SID - Sistema Interscambio",
+      type: "pdf",
+      description: "Guida completa per la registrazione al Sistema di Interscambio flussi Dati (SID) dell'Agenzia delle Entrate.",
+      fileSize: "2.4 MB",
+      downloadUrl: "#",
+      tags: ["SID", "registrazione", "guida"],
+    },
+    {
+      title: "Manuale operativo flussi dati SID",
+      category: "SID - Sistema Interscambio",
+      type: "pdf",
+      description: "Manuale tecnico per la gestione e trasmissione dei flussi dati tramite l'infrastruttura SID.",
+      fileSize: "5.1 MB",
+      downloadUrl: "#",
+      tags: ["SID", "manuale", "flussi dati"],
+    },
+    {
+      title: "Specifiche tecniche canali trasmissione",
+      category: "SID - Sistema Interscambio",
+      type: "pdf",
+      description: "Specifiche tecniche per i canali di trasmissione PEC e FTP utilizzabili con il sistema SID.",
+      fileSize: "1.8 MB",
+      downloadUrl: "#",
+      tags: ["SID", "PEC", "FTP", "tecnico"],
+    },
+    {
+      title: "Modello F24 - Istruzioni 2024",
+      category: "Modelli e Dichiarazioni",
+      type: "pdf",
+      description: "Istruzioni per la compilazione del modello F24 per il pagamento delle imposte anno 2024.",
+      fileSize: "890 KB",
+      downloadUrl: "#",
+      tags: ["F24", "pagamento", "imposte"],
+    },
+    {
+      title: "Modello 730/2024",
+      category: "Modelli e Dichiarazioni",
+      type: "pdf",
+      description: "Modello 730 per la dichiarazione dei redditi delle persone fisiche anno 2024.",
+      fileSize: "1.2 MB",
+      downloadUrl: "#",
+      tags: ["730", "dichiarazione redditi", "persone fisiche"],
+    },
+    {
+      title: "Calcolo IMU 2024 - Foglio di calcolo",
+      category: "Tributi Locali",
+      type: "excel",
+      description: "Foglio Excel per il calcolo dell'Imposta Municipale Propria (IMU) anno 2024.",
+      fileSize: "456 KB",
+      downloadUrl: "#",
+      tags: ["IMU", "calcolo", "tributi locali"],
+    },
+    {
+      title: "Prospetto ritenute dipendenti",
+      category: "Lavoro e Previdenza",
+      type: "excel",
+      description: "Prospetto Excel per il calcolo e la gestione delle ritenute fiscali sui redditi da lavoro dipendente.",
+      fileSize: "320 KB",
+      downloadUrl: "#",
+      tags: ["ritenute", "dipendenti", "lavoro"],
+    },
+    {
+      title: "Dichiarazione IVA 2024",
+      category: "IVA",
+      type: "pdf",
+      description: "Modello per la dichiarazione annuale IVA anno d'imposta 2023.",
+      fileSize: "2.1 MB",
+      downloadUrl: "#",
+      tags: ["IVA", "dichiarazione", "annuale"],
+    },
+    {
+      title: "Liquidazione IVA trimestrale - Calcolo",
+      category: "IVA",
+      type: "excel",
+      description: "Foglio Excel per la liquidazione trimestrale dell'IVA con calcolo automatico delle compensazioni.",
+      fileSize: "280 KB",
+      downloadUrl: "#",
+      tags: ["IVA", "liquidazione", "trimestrale"],
+    },
+    {
+      title: "CU 2024 - Certificazione Unica",
+      category: "Modelli e Dichiarazioni",
+      type: "pdf",
+      description: "Certificazione Unica dei redditi da lavoro dipendente e assimilati, anno 2023.",
+      fileSize: "1.5 MB",
+      downloadUrl: "#",
+      tags: ["CU", "certificazione", "lavoro dipendente"],
+    },
+    {
+      title: "Registro corrispettivi elettronico",
+      category: "Fatturazione Elettronica",
+      type: "excel",
+      description: "Registro Excel per la gestione dei corrispettivi giornalieri in formato elettronico.",
+      fileSize: "195 KB",
+      downloadUrl: "#",
+      tags: ["corrispettivi", "elettronico", "registro"],
+    },
+    {
+      title: "Guida alla fatturazione elettronica B2B",
+      category: "Fatturazione Elettronica",
+      type: "pdf",
+      description: "Guida completa alla fatturazione elettronica tra imprese (B2B) tramite Sistema di Interscambio.",
+      fileSize: "3.2 MB",
+      downloadUrl: "#",
+      tags: ["fatturazione elettronica", "B2B", "SDI"],
+    },
+    {
+      title: "CRS – Guida alla compilazione flusso 2024",
+      category: "CRS - Common Reporting Standard",
+      type: "pdf",
+      description: "Guida ufficiale alla compilazione del flusso CRS (Common Reporting Standard) per la comunicazione annuale delle informazioni finanziarie.",
+      fileSize: "3.4 MB",
+      downloadUrl: "#",
+      tags: ["CRS", "Common Reporting Standard", "flusso", "guida"],
+    },
+    {
+      title: "CRS – Template Excel raccolta dati istituzioni finanziarie",
+      category: "CRS - Common Reporting Standard",
+      type: "excel",
+      description: "Foglio Excel preconfigurato per la raccolta dei dati CRS da parte delle istituzioni finanziarie (banche, assicurazioni, fondi) con macro di controllo.",
+      fileSize: "890 KB",
+      downloadUrl: "#",
+      tags: ["CRS", "template", "istituzioni finanziarie", "raccolta dati"],
+    },
+    {
+      title: "CRS – Istruzioni operative trasmissione SID",
+      category: "CRS - Common Reporting Standard",
+      type: "pdf",
+      description: "Istruzioni operative dettagliate per la trasmissione dei flussi CRS tramite il Sistema di Interscambio Dati (SID) dell'Agenzia delle Entrate.",
+      fileSize: "2.1 MB",
+      downloadUrl: "#",
+      tags: ["CRS", "SID", "trasmissione", "istruzioni"],
+    },
+    {
+      title: "CRS – FAQ Domande frequenti",
+      category: "CRS - Common Reporting Standard",
+      type: "pdf",
+      description: "Raccolta delle domande frequenti sul Common Reporting Standard: obblighi, scadenze, soggetti interessati e modalità operative.",
+      fileSize: "780 KB",
+      downloadUrl: "#",
+      tags: ["CRS", "FAQ", "domande frequenti"],
+    },
+    {
+      title: "Provvedimento Direttoriale CRS 28/12/2015",
+      category: "CRS - Common Reporting Standard",
+      type: "pdf",
+      description: "Provvedimento del Direttore dell'Agenzia delle Entrate che recepisce il Common Reporting Standard e stabilisce gli obblighi per le istituzioni finanziarie italiane.",
+      fileSize: "540 KB",
+      downloadUrl: "#",
+      tags: ["CRS", "provvedimento", "normativa"],
+    },
+  ]);
+
+  console.log("Seeding templates...");
+
+  await db.insert(templatesTable).values([
+    {
+      name: "Lettera Ufficiale Agenzia delle Entrate",
+      description: "Template per comunicazioni ufficiali con intestazione Agenzia delle Entrate, logo originale e spazio per firma del funzionario.",
+      category: "Comunicazioni Ufficiali",
+      hasLogo: true,
+      hasSignature: true,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Avviso di Accertamento",
+      description: "Template standard per avvisi di accertamento fiscale con tutti i campi obbligatori e riferimenti normativi.",
+      category: "Atti Fiscali",
+      hasLogo: true,
+      hasSignature: true,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Ricevuta di Pagamento",
+      description: "Template ricevuta per pagamenti di tributi e imposte con codice fiscale, importo e causale.",
+      category: "Ricevute e Quietanze",
+      hasLogo: true,
+      hasSignature: false,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Comunicazione Irregolarità",
+      description: "Template per comunicazione di irregolarità con invito al contraddittorio e termini di risposta.",
+      category: "Atti Fiscali",
+      hasLogo: true,
+      hasSignature: true,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Dichiarazione Sostitutiva",
+      description: "Modulo per dichiarazione sostitutiva ai sensi del DPR 445/2000 con logo istituzionale.",
+      category: "Dichiarazioni",
+      hasLogo: true,
+      hasSignature: true,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Delega di Rappresentanza",
+      description: "Template per delega di rappresentanza fiscale con tutti i campi necessari per l'intermediario.",
+      category: "Deleghe",
+      hasLogo: true,
+      hasSignature: true,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Istanza di Autotutela",
+      description: "Template per la presentazione di istanza di autotutela con motivazioni e documentazione allegata.",
+      category: "Istanze",
+      hasLogo: false,
+      hasSignature: true,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Prospetto Riepilogativo Contribuente",
+      description: "Report Excel personalizzabile con riepilogo della situazione fiscale del contribuente.",
+      category: "Report e Prospetti",
+      hasLogo: true,
+      hasSignature: false,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Template CRS – Comunicazione Istituzione Finanziaria",
+      description: "Template ufficiale per la comunicazione CRS (Common Reporting Standard) con intestazione Agenzia delle Entrate, logo e spazio per firma del responsabile compliance.",
+      category: "CRS - Common Reporting Standard",
+      hasLogo: true,
+      hasSignature: true,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+    {
+      name: "Report Annuale CRS – Riepilogo Conti Comunicati",
+      description: "Template Excel per il riepilogo annuale dei conti finanziari comunicati ai sensi del CRS, con formule di controllo e validazione automatica.",
+      category: "CRS - Common Reporting Standard",
+      hasLogo: true,
+      hasSignature: false,
+      previewUrl: null,
+      downloadUrl: "#",
+    },
+  ]);
+
+  console.log("Seed completed successfully!");
+  process.exit(0);
+}
+
+seed().catch((err) => {
+  console.error("Seed failed:", err);
+  process.exit(1);
+});
